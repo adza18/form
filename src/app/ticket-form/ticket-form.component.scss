@@ -1,0 +1,80 @@
+$text-color : #6A6A6A;
+$primary:#126C9C;
+
+.input-container{
+    padding-bottom: 25px;
+    color: #BEBEBE;
+}
+.exit{
+    border: transparent;
+    background-color: transparent;
+}
+.input-container:focus-within label{
+    color: black;
+}
+.title{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.auto{
+    font-size: 12px;
+    // padding-bottom: 5px;
+    color: $primary;
+
+}
+.circle{
+    border: 1px dashed #6A6A6A;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    // padding: 3px;
+    border-radius: 50%;
+    // padding: 4px;
+    // margin-left: 5px;
+}
+
+select{
+    option{
+    color: $text-color;
+
+    }
+}
+// .input{
+//     width: 100%;
+//     border-radius: 5px;
+// }
+
+.color{
+    color: $text-color;
+    .tID{
+    font-size: 16px;
+    }
+}
+
+.add{
+    border:1px solid $primary;
+    border-radius: 5%;
+    color: $primary ;
+    width: 50px;
+    font-size: 12px;
+    background-color: transparent;
+}
+
+.main-body-wrapper{
+    border-radius: 2%;
+    border: 2px solid #E4E4E4;
+    padding-bottom: 25px;
+}
+
+.create{
+    background-color: $primary;
+    color: white;
+    width: 100px;
+    border: transparent;
+    font-size: 12px;
+    padding: 5px;
+}
+

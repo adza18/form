@@ -1,0 +1,170 @@
+<!-- <div class="container d-flex justify-content-center" style="border:2px solid green ;">
+    <div class="d-flex justify-content-center" style="border: 2px solid red;">
+        <div class="row" style="border: 2px solid oranges;">
+            Open ticket
+        </div>
+    </div>
+</div>
+<div class="container" style="border:2px solid blue ;">
+    <form>
+        <div class="input-container">
+            <label class="mb-2" for="name">Name</label> <br>
+            <input class="form-control" type="text" id="name">
+        </div>
+        <div class="input-container">
+            <label class="mb-2" for="project">Project</label> <br>
+            <select class="form-select" aria-label="Project select">
+                <option selected>Select project</option>
+                <option value="1">Select A</option>
+                <option value="2">Select B</option>
+            </select>
+        </div>   
+        <div class="input-container">
+            <label class="mb-2" for="description">Description</label> <br>
+            <input class="form-control" type="text" id="description">
+        </div>
+    </form>
+    <div class="row d-flex" style="border: 2px solid green;">
+        <div class="col-9 col-md-11">Attachments</div>
+        <div class="col-1 col-md-1 mr-2">
+            <button class="btn btn-outline-primary pl-2 w-20">+Add</button>
+        </div>
+        <div class="col-12">Drag and drop <a href="#">files</a></div>
+    </div>
+    <div class="float-left">ABC</div>
+</div> -->
+
+<!-- <div class="container d-flex justify-content-center" style="border:2px solid green ;">
+    <div class="wrapper" style="border:2px solid red ;">
+        <div class="title pt-2">Open ticket</div>
+        <div class="row pt-q pb-3" style="border: 2px solid orange;">
+            <div class="col-6 color">Ticked ID:473830</div>
+            <span class="col-6" style="border:2px solid pink ;">
+                <span class="circle"><i class="bi bi-eye"></i></span>
+                <span class="circle"><i class="bi bi-people"></i></span>
+                <span class="circle"><i class="bi bi-calendar3"></i></span>
+                <span class="circle"><i class="bi bi-flag"></i></span>
+            </span>
+        </div>
+       <form>
+            <div class="input-container">
+                <label class="mb-2" for="name">Name</label> <br>
+                <input class="form-control" type="text" id="name">
+            </div>
+       </form>
+       <form>
+            <div class="input-container">
+                <label class="mb-2" for="project">Project</label> <br>
+                <select class="form-select" style="color:#BEBEBE" aria-label="Project select">
+                    <option selected >Select project</option>
+                    <option value="1">Select A</option>
+                    <option value="2">Select B</option>
+                </select>
+            </div>  
+        </form> 
+        <form>
+            <div class="input-container">
+                <label class="mb-2" for="description">Description</label> <br>
+                <input class="form-control" type="text" id="description">
+            </div>
+        </form>
+        <div class="row d-flex">
+            <div class="col-9" style="font-size: 14px;">Attachments</div>
+            <div class="col-1" >
+                <button class="add">+Add</button>
+            </div>
+            <div class="col-12 color" style="font-size: 12px;">Drag and drop <a href="#">files</a></div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button class="create">Create</button>
+
+        </div>
+
+    
+    </div>
+</div> -->
+
+
+<div class=" container-fluid container-lg ">
+    <div class="row d-flex justify-content-center p-5">
+        
+        <div class="col-lg-5 col-12 main-body-wrapper" >
+            <div class="main-body">
+            <div class="d-flex justify-content-end">
+                <button class="exit">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+    
+            </div>
+            <div class="title pt-2">Open ticket</div>
+            <div class="row pt-q pb-3 d-flex justify-content-between">
+                <div class="col-6 color">
+                    <span class="tID">Ticked ID:473830 </span>
+                    <span class="auto">*auto-generated</span></div>
+                <div class="col-4 " >
+                    <div class="icon-wrapper row d-flex justify-content-evenly align-items-center">
+                        <div class=" col-2 "><i class="bi bi-eye"></i></div>
+                        <div class="circle col-2"><i class="bi bi-people"></i></div>
+                        <div class="circle col-2"><i class="bi bi-calendar3"></i></div>
+                        <div class="circle col-2"><i class="bi bi-flag"></i></div>
+                    </div>
+                   
+                </div>
+            </div>
+            <form [formGroup]="ticketForm">
+      
+                <div class="input-container">
+                    <label class="mb-2" for="name">Name</label> <br>
+                    <input class="form-control" type="text" id="name" formControlName="name">
+                    <div class="text-danger" *ngIf="getInput('name')?.invalid && (getInput('name')?.touched || getInput('name')?.dirty )">
+                        <div *ngIf="isValid('name','required')">
+                            Name is required
+                        </div>
+                        <div *ngIf="isValid('name','minlength')">
+                            Minimum length is 5
+                        </div>
+                    </div>
+                </div>
+           
+        
+                <div class="input-container">
+                    <label class="mb-2" for="project">Project</label> <br>
+                    <select class="form-select" style="color:#BEBEBE" aria-label="Project select">
+                        <option selected>Select project</option>
+                        <option value="1">Select A</option>
+                        <option value="2">Select B</option>
+                    </select>
+                </div>  
+            
+        
+                <div class="input-container">
+                    <label class="mb-2" for="description">Description</label> <br>
+                    <!-- <input class="form-control" type="text" id="description" formControlName="description"> -->
+                    <textarea class="form-control" placeholder="Message..." formControlName="description"></textarea>
+                    <div class="text-danger" *ngIf="getInput('description')?.invalid && (getInput('description')?.touched || getInput('description')?.dirty )">
+                        <div *ngIf="isValid('description','required')">
+                            Description is required
+                        </div>
+                        <div *ngIf="isValid('description','minlength')">
+                            Minimum length is 5
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row d-flex">
+                <div class="col-10 " style="font-size: 14px; font-weight:bold ;">Attachments</div>
+                <div class="col-2 d-flex justify-content-end" >
+                    <button class="add">+Add</button>
+                </div>
+                <div class="col-12 color" style="font-size: 12px;"><span><i class="bi bi-paperclip"></i></span>Drag & Drop files to attach or <a href="#">browse</a></div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="create">Create Ticket</button>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div> 
+
